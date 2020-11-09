@@ -1,8 +1,8 @@
 <template>
   <div id="app">
 
-    <p>{{ $t("message.hello") }}</p>
-    <router-link to="/home">Перейти к Foo</router-link>
+    <!--<p>{{ $t("message.hello") }}</p>-->
+    <!--<router-link to="/home">Перейти к Foo</router-link>-->
 
     <AuthLayout v-if="Object.prototype.hasOwnProperty.call(this.$route.meta, 'layout') && this.$route.meta.layout.name === 'auth'" />
 
@@ -41,8 +41,15 @@ export default {
 
   //
   //   console.log(this.$route.meta.hasOwnProperty('layout'));
-    console.log(Object.prototype.hasOwnProperty.call(this.$route.meta, 'layout'));
+  //   console.log(Object.prototype.hasOwnProperty.call(this.$route.meta, 'layout'));
 
+
+    // this.$store.dispatch('checkAuth').then((checkAuth) => {
+    //   if(!checkAuth) this.$router.push('auth');
+    // })
+
+    // console.log(this.$router);
+    // .push('asfdsd')
 
     // fetch('https://jsonplaceholder.typicode.com/todos/1')
     //   .then(response => response.json())
@@ -56,13 +63,10 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import 'normalize-scss';
+  @include normalize();
+  @import '../node_modules/bootstrap-4-grid/scss/grid';
+  @import "./scss/mixins/mixins.scss";
+  @import "./scss/main";
 </style>

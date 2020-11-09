@@ -2,9 +2,16 @@ export const auth = {
   state: {
     auth: false,
     token: false,
+    loading: false,
   },
 
   mutations: {
+    setAuthStart: (state) => {
+      state.loading = true
+    },
+    setAuthEnd: (state) => {
+      state.loading = false
+    },
     setAuth: (state, payload) => {
       state.auth = payload.auth
       state.token = payload.token
@@ -19,15 +26,19 @@ export const auth = {
 
   actions: {
     auth({commit}) {
+      commit('setAuthStart')
       commit('setAuth',{auth: true, token: '123'})
-
       localStorage.setItem('token', '123');
+      commit('setAuthEnd')
     },
 
-    checkAuth({commit}) {
+    checkAuth() {
       if(localStorage.getItem('token') !== null){
-        commit('setAuth',{auth: true, token: '123'})
+        // commit('setAuth',{auth: true, token: '123'})
+        return true;
       }
+
+      return false;
     },
 
     logOut({commit}) {

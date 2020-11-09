@@ -1,31 +1,49 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
-// import Header from '../components/templates/Header/Header.vue'
-// import Home from '../components/Home.vue'
 
-import {DashboardRoutes} from '../components/containers/DashboardModule/DashboardRoutes'
+import {routerPaths} from './routerPaths'
 
 Vue.use(VueRouter)
 
-const Home = () => import(/* webpackChunkName: "group-foo" */ '../components/Home.vue')
 
+// *************  Module Include ************ //
+
+const Home = () => import(/* webpackChunkName: "group-home" */ '../components/Home.vue')
+const Auth = () => import(/* webpackChunkName: "group-auth" */ '../components/modules/AuthModule/Auth.vue')
+
+// *************  End Module Include ************ //
+
+// *************  Module Routes Include ************ //
+
+import {DashboardRoutes} from '../components/modules/DashboardModule/DashboardRoutes'
+import {AuthRoutes} from '../components/modules/AuthModule/AuthRoutes'
+
+// *************  End Module Routes Include ************ //
 
 const routes = [
   {
     path: '/',
     component: HelloWorld,
     children: DashboardRoutes,
+  },
+
+  {
+    path: '/home', component: Home,
+  },
+
+  {
+    path: routerPaths.auth,
+    component: Auth,
+    redirect: routerPaths.login,
+    children: AuthRoutes,
     meta: {
       layout: {
         name: 'auth',
       },
     },
   },
-  { path: '/home', component: Home,
 
-
-  },
 ]
 
 export const router = new VueRouter({
@@ -33,4 +51,9 @@ export const router = new VueRouter({
   routes
 })
 
-
+router.beforeEach((to, from, next) => {
+  if (window.localStorage.token === undefined && to.path.indexOf(routerPaths.auth) !== 0 ){
+    next(routerPaths.auth)
+  }
+  else next()
+})
