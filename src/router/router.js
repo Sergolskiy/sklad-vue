@@ -11,6 +11,7 @@ Vue.use(VueRouter)
 
 const Home = () => import(/* webpackChunkName: "group-home" */ '../components/Home.vue')
 const Auth = () => import(/* webpackChunkName: "group-auth" */ '../components/modules/AuthModule/Auth.vue')
+const Registration = () => import(/* webpackChunkName: "group-auth" */ '../components/modules/RegistrationModule/Registration.vue')
 
 // *************  End Module Include ************ //
 
@@ -37,6 +38,16 @@ const routes = [
     component: Auth,
     redirect: routerPaths.login,
     children: AuthRoutes,
+    meta: {
+      layout: {
+        name: 'auth',
+      },
+    },
+  },
+
+  {
+    path: routerPaths.signUp,
+    component: Registration,
     meta: {
       layout: {
         name: 'auth',
