@@ -21,47 +21,37 @@
 
           <div class="auth-form__inner">
             <div class="auth-form__title">
-              Sign In
+              Forgot Password?
             </div>
             <div class="auth-form__subtitle">
-              Welcome to Ukrainian Delivery Company “SkladUSA”!
-              <br>
-              Please login to your account to start managing your orders
+              Please enter your email. If the email exists you will receive a recovery link
             </div>
 
             <div class="auth-form__field">
               <WhiteInput :type="'email'" :placeholder="'E-mail'"/>
             </div>
 
-            <div class="auth-form__field">
-              <WhiteInput :type="'password'" :placeholder="'Password'"/>
-            </div>
-
-            <div class="auth-form__forgot">
-              <router-link :to="routerPaths.forgot" class="site-link">
-              <span>
-                Forgot Your Password?
-              </span>
-              </router-link>
-            </div>
-
 
             <div class="auth-form__btn">
               <div class="auth-form__btn-login">
-                <FullButton :value="'Login'"/>
-              </div>
-              <div class="auth-form__btn-fb btn-style">
-                <Fb/>
+                <FullButton :value="'Submit'"/>
               </div>
             </div>
 
             <div class="auth-form__create">
-              New to SkladUSA?
+              To enter the platform
+              <router-link :to="routerPaths.login" class="site-link">
+                <span>
+                  LogIn
+                </span>
+              </router-link>
+              or
               <router-link :to="routerPaths.signUp" class="site-link">
                 <span>
                   Create an Account
                 </span>
               </router-link>
+
             </div>
           </div>
 
@@ -75,8 +65,8 @@
   </div>
 </template>
 
-<script src="./Login.js"></script>
+<script src="./Forgot.js"></script>
 
 <style lang="scss">
-  @import "./Login";
+@import "./Forgot";
 </style>

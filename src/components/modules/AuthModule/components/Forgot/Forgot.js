@@ -1,4 +1,3 @@
-
 import WhiteInput from '../../../../UI/inputs/WhiteInput/WhiteInput'
 import FullButton from '../../../../UI/buttons/FullButtons/FullButton'
 import Fb from '../../../../../../public/img/login-group/fb.svg?inline'
@@ -8,13 +7,13 @@ import {routerPaths} from '../../../../../router/routerPaths'
 
 
 export default {
-  name: "Login",
+  name: "Forgot",
 
   components: {
     WhiteInput,
     Fb,
-    BottomLine,
     FullButton,
+    BottomLine,
   },
 
   data() {
@@ -22,6 +21,5 @@ export default {
       routerPaths: routerPaths
     }
   }
-
 
 }

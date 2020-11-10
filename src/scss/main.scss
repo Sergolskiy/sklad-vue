@@ -1,0 +1,196 @@
+@import "./colors";
+@import "./fonts";
+@import "./ui-main-styles";
+
+body{
+  font-family: Roboto;
+  font-weight: normal;
+}
+
+input{
+  outline: 0;
+}
+
+.btn-style{
+  cursor: pointer;
+}
+
+.auth-wrap{
+  min-height: 1024px;
+  background: #F8F4EE url("./assets/img/login-group/login-bg.svg") bottom right no-repeat;
+  background-size: cover;
+}
+
+.auth-body{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 720px;
+  margin-left: 15.6vw;
+  background: #FFFCF8;
+  border-radius: 5px;
+  max-width: 590px;
+  padding: 80px 95px 30px;
+
+  &__alert{
+
+  }
+
+  &__form{
+
+  }
+
+  &__form-bottom{
+    margin-top: auto;
+  }
+
+  &__form-img{
+    position: absolute;
+    bottom: -45px;
+    left: -70px;
+  }
+}
+
+.auth-head__logo{
+  padding-top:  50px;
+  margin-left: 70px;
+  margin-bottom: 60px;
+}
+
+.auth-form{
+
+  &__title{
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 56px;
+    color: #8F7A61;
+    margin-bottom: 16px;
+  }
+
+  &__subtitle{
+    font-size: 14px;
+    line-height: 24px;
+    color: $black;
+    margin-bottom: 32px;
+  }
+
+  &__field{
+    margin-bottom: 32px;
+
+    &:last-child{
+      margin-bottom: 24px;
+    }
+  }
+
+  &__forgot{
+    margin-bottom: 40px;
+  }
+
+  &__btn{
+    display: flex;
+  }
+
+  &__btn-login{
+    width: 100%;
+  }
+
+  &__btn-fb{
+    display: flex;
+    min-width: 55px;
+    margin-left: 24px;
+    transition: 0.3s;
+
+    &:hover{
+      box-shadow: 0px 0 8px #00000052;
+    }
+  }
+
+  &__create{
+    margin-top: 24px;
+  }
+
+}
+
+.auth-lang{
+  position: relative;
+  display: flex;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+
+  &:after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 1px;
+    background: #C4C4C4;
+  }
+
+  &__item{
+    font-size: 12px;
+    line-height: 14px;
+    color: $lightBlack;
+    margin-right: 8px;
+    padding-right: 8px;
+    position: relative;
+    cursor: pointer;
+
+    &:after{
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100%;
+      background: #C4C4C4;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &:last-child{
+      margin-right: 0;
+      padding-right: 0;
+
+      &:after{
+        display: none;
+      }
+    }
+
+    &:hover,
+    &.active{
+      color: $black;
+    }
+  }
+
+}
+
+.auth-form-bottom{
+  &__copyright{
+    font-size: 12px;
+    line-height: 14px;
+    color: $lightBlack;
+
+    span{
+      margin-left: 12px;
+      padding-left: 12px;
+      position: relative;
+
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        background: #C4C4C4;
+        width: 2px;
+        height: 2px;
+        transition: 0.3s;
+      }
+    }
+
+  }
+}
+
+
