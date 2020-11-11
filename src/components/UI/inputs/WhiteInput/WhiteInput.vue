@@ -1,6 +1,17 @@
 <template>
-  <label :for="'white-input-' + id" class="white-input-wrap" >
-    <input :id="'white-input-' + id" :placeholder="placeholder" :type="checkType()" class="white-input">
+  <label :for="'white-input-' + id" class="white-input-wrap" :class="{ active: activeInput || content.length > 0 }">
+    <input
+            :id="'white-input-' + id"
+            :type="checkType()"
+            class="white-input"
+            v-on:input="handleInput($event.target.value)"
+            :value="content"
+    >
+    <span class="white-input-wrap__label"
+          v-if="label"
+    >
+      {{ label }}
+    </span>
     <span class="white-input-wrap__pass" @click="showPass" v-if="type === 'password'"></span>
   </label>
 </template>
@@ -13,12 +24,16 @@
       return {
         id: null,
         isShowPass: false,
+        content: this.value,
+        activeInput: false,
       }
     },
 
     props: [
       'type',
+      'label',
       'placeholder',
+      'value',
     ],
 
     mounted () {
@@ -36,6 +51,10 @@
         } else {
           return this.type
         }
+      },
+
+      handleInput (value) {
+        this.$emit('input', value)
       }
     }
   }
@@ -65,6 +84,16 @@
         color: #BBAD9C;
       }
     }
+
+    &__label{
+      position: absolute;
+      left: 27px;
+      top: 21px;
+      font-size: 14px;
+      line-height: 16px;
+      color: #BBAD9C;
+    }
+
 
     &__pass{
       display: block;

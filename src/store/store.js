@@ -14,17 +14,24 @@ export const store = new Vuex.Store({
 
   state: {
     lang: 'en',
+    PATHS: {},
   },
 
   getters: {
     GET_LANG: state => {
       return state.lang;
     },
+    GET_PATHS: state => {
+      return state.PATHS;
+    },
   },
 
   mutations: {
     SET_LANG: (state, payload) => {
       state.lang = payload;
+    },
+    SET_PATHS: (state, payload) => {
+      state.PATHS = payload;
     },
   },
 

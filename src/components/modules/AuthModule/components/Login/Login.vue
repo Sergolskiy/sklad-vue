@@ -21,16 +21,17 @@
             Please login to your account to start managing your orders
           </div>
 
-          <div class="auth-form__field">
-            <WhiteInput :type="'email'" :placeholder="'E-mail'"/>
+          <div class="auth-form__field"
+               v-bind:class="{'ui-no-valid': validation.email}">
+            <WhiteInput :type="'email'" v-model="email" :label="'E-mail'" />
           </div>
 
-          <div class="auth-form__field">
-            <WhiteInput :type="'password'" :placeholder="'Password'"/>
+          <div class="auth-form__field" v-bind:class="{'ui-no-valid': validation.password}">
+            <WhiteInput :type="'password'" :label="'Password'" v-model="password"/>
           </div>
 
           <div class="auth-form__forgot">
-            <router-link :to="routerPaths.forgot" class="site-link">
+            <router-link :to="$store.getters.GET_PATHS.forgot" class="site-link">
               <span>
                 Forgot Your Password?
               </span>
@@ -40,7 +41,7 @@
 
           <div class="auth-form__btn">
             <div class="auth-form__btn-login">
-              <FullButton :value="'Login'"/>
+              <FullButton :value="'Login'" v-on:click.native="auth"/>
             </div>
             <div class="auth-form__btn-fb btn-style">
               <Fb/>
@@ -49,7 +50,7 @@
 
           <div class="auth-form__create">
             New to SkladUSA?
-            <router-link :to="routerPaths.signUp" class="site-link">
+            <router-link :to="$store.getters.GET_PATHS.signUp" class="site-link">
                 <span>
                   Create an Account
                 </span>

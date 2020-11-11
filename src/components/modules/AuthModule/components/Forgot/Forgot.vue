@@ -11,7 +11,7 @@
     <div class="auth-body__form">
       <div class="auth-form">
 
-        <div class="auth-form__inner">
+        <div class="auth-form__inner" v-if="!forgotComplete">
           <div class="auth-form__title">
             Forgot Password?
           </div>
@@ -26,19 +26,19 @@
 
           <div class="auth-form__btn">
             <div class="auth-form__btn-login">
-              <FullButton :value="'Submit'"/>
+              <FullButton v-on:click.native="forgotSubmit" :value="'Submit'"/>
             </div>
           </div>
 
           <div class="auth-form__create">
             To enter the platform
-            <router-link :to="routerPaths.login" class="site-link">
+            <router-link :to="$store.getters.GET_PATHS.login" class="site-link">
                 <span>
                   LogIn
                 </span>
             </router-link>
             or
-            <router-link :to="routerPaths.signUp" class="site-link">
+            <router-link :to="$store.getters.GET_PATHS.signUp" class="site-link">
                 <span>
                   Create an Account
                 </span>
@@ -46,6 +46,8 @@
 
           </div>
         </div>
+
+        <ForgotComplete v-if="forgotComplete" />
 
       </div>
 
