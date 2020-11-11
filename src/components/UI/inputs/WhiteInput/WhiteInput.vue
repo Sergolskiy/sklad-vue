@@ -1,11 +1,13 @@
 <template>
-  <label :for="'white-input-' + id" class="white-input-wrap" :class="{ active: activeInput || content.length > 0 }">
+  <label :for="'white-input-' + id" class="white-input-wrap" :class="{ active: activeInput || value.length > 0 }">
     <input
             :id="'white-input-' + id"
             :type="checkType()"
             class="white-input"
             v-on:input="handleInput($event.target.value)"
-            :value="content"
+            :value="value"
+            @focus="activeInput = true"
+            @blur="activeInput = false"
     >
     <span class="white-input-wrap__label"
           v-if="label"
@@ -24,7 +26,6 @@
       return {
         id: null,
         isShowPass: false,
-        content: this.value,
         activeInput: false,
       }
     },
@@ -55,7 +56,8 @@
 
       handleInput (value) {
         this.$emit('input', value)
-      }
+      },
+
     }
   }
 </script>
@@ -92,6 +94,7 @@
       font-size: 14px;
       line-height: 16px;
       color: #BBAD9C;
+      transition: 0.3s;
     }
 
 
@@ -105,6 +108,13 @@
       right: 20px;
       background: url("../../../../assets/img/common/pass-show.svg") center center no-repeat;
       cursor: pointer;
+    }
+
+    &.active .white-input-wrap__label{
+      top: -7px;
+      left: 19px;
+      background: white;
+      padding: 0 2px;
     }
   }
 

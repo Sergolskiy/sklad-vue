@@ -23,7 +23,7 @@
 
           <div class="auth-form__field"
                v-bind:class="{'ui-no-valid': validation.email}">
-            <WhiteInput :type="'email'" v-model="email" :label="'E-mail'" />
+            <WhiteInput :type="'email'"  v-model="email" :label="'E-mail'" />
           </div>
 
           <div class="auth-form__field" v-bind:class="{'ui-no-valid': validation.password}">
