@@ -1,0 +1,42 @@
+@import "../../../../../scss/colors";
+
+.language-select{
+  position: relative;
+  display: flex;
+
+  &__item{
+    font-size: 12px;
+    line-height: 14px;
+    color: $lightBlack;
+    margin-right: 8px;
+    padding-right: 8px;
+    position: relative;
+    cursor: pointer;
+
+    &:after{
+      content: "";
+      display: block;
+      top: 2px;
+      width: 1px;
+      height: 8px;
+      background: #C4C4C4;
+      position: absolute;
+      right: 0;
+    }
+
+    &:last-child{
+      margin-right: 0;
+      padding-right: 0;
+
+      &:after{
+        display: none;
+      }
+    }
+
+    &:hover,
+    &.active{
+      color: $black;
+    }
+  }
+
+}

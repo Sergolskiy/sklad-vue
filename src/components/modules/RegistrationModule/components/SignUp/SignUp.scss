@@ -1,0 +1,29 @@
+.registration{
+  display: flex;
+  padding: 44px 48px 48px 48px;
+  background: #F8F4EE;
+  min-height: 100vh;
+
+  &__inner{
+    margin: 0 -15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img-wrap{
+    padding: 0 15px;
+    width: 100%;
+    max-width: 687px;
+    display: flex;
+    max-height: 938px;
+  }
+
+  &__form-wrap{
+    padding: 0 15px;
+    max-width: 1104px;
+    display: flex;
+    width: 100%;
+  }
+
+}
