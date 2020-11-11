@@ -17,6 +17,9 @@
 import AuthLayout from './components/layouts/AuthLayout/AuthLayout.vue'
 import DefaultLayout from './components/layouts/DefaultLayout/DefaultLayout.vue'
 
+
+import {routerPaths} from './router/routerPaths'
+
 export default {
   name: 'App',
 
@@ -27,11 +30,15 @@ export default {
 
   data(){
     return{
-      data: []
+      data: [],
+      routerPaths: routerPaths
     }
   },
 
   mounted() {
+
+    this.$store.commit('SET_PATHS', this.routerPaths);
+
     // console.log(this.$store.getters.getLang);
     // this.$store.commit('setLang', 'ru')
     // console.log(this.$store.getters.getLang);
