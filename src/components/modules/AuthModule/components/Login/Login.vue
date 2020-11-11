@@ -21,13 +21,23 @@
             Please login to your account to start managing your orders
           </div>
 
-          <div class="auth-form__field"
-               v-bind:class="{'ui-no-valid': validation.email}">
-            <WhiteInput :type="'email'"  v-model="email" :label="'E-mail'" />
+          <div class="auth-form__field">
+            <WhiteInput
+                    v-bind:class="{'ui-no-valid': validation.email}"
+                    :error="validation.email"
+                    :errorTxt="'Enter valid email'"
+                    :type="'email'"
+                    v-model="email"
+                    :label="'E-mail'" />
           </div>
 
-          <div class="auth-form__field" v-bind:class="{'ui-no-valid': validation.password}">
-            <WhiteInput :type="'password'" :label="'Password'" v-model="password"/>
+          <div class="auth-form__field">
+            <WhiteInput
+                    v-bind:class="{'ui-no-valid': validation.password}"
+                    :error="validation.password"
+                    :type="'password'"
+                    :label="'Password'"
+                    v-model="password"/>
           </div>
 
           <div class="auth-form__forgot">

@@ -18,7 +18,7 @@ export default {
   },
 
   data() {
-    return{
+    return {
       email: '',
       password: '',
 
@@ -51,13 +51,12 @@ export default {
           ]
         },
       }
+
       let validate = validation(validationItems, validationOptions);
       this.validation = validate.validation;
-
+      console.log(validate);
       if(validate.isValidate){
-        console.log(this.$store.dispatch('auth'));
-        console.log(this.$store.getters.getAuth);
-        this.$emit('close');
+        alert(2342)
       }
     },
 
