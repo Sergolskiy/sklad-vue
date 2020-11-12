@@ -15,6 +15,7 @@
       {{ label }}
     </span>
     <span class="white-input-wrap__pass" @click="showPass" v-if="type === 'password'"></span>
+    <span class="white-input-wrap__error" v-if="error && errorTxt">{{errorTxt}}</span>
   </label>
 </template>
 
@@ -35,6 +36,8 @@
       'label',
       'placeholder',
       'value',
+      'error',
+      'errorTxt',
     ],
 
     mounted () {
@@ -64,6 +67,7 @@
 
 <style lang="scss">
   @import "../../../../scss/mixins/mixins";
+  @import "../../../../scss/colors";
 
   .white-input-wrap{
     display: block;
@@ -110,11 +114,24 @@
       cursor: pointer;
     }
 
+    &__error{
+      position: absolute;
+      bottom: -18px;
+      right: 0;
+      font-size: 11px;
+      line-height: 13px;
+      color: $orange;
+    }
+
     &.active .white-input-wrap__label{
       top: -7px;
       left: 19px;
       background: white;
       padding: 0 2px;
+    }
+
+    &.ui-no-valid .white-input{
+      border: 2px solid $orange;
     }
   }
 

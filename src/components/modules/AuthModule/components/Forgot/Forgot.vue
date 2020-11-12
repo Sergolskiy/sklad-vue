@@ -20,7 +20,13 @@
           </div>
 
           <div class="auth-form__field">
-            <WhiteInput :type="'email'" :placeholder="'E-mail'"/>
+            <WhiteInput
+                    v-bind:class="{'ui-no-valid': validation.email}"
+                    :errorTxt="'Enter valid email'"
+                    :error="validation.email"
+                    :type="'email'"
+                    v-model="email"
+                    :label="'E-mail'" />
           </div>
 
 
