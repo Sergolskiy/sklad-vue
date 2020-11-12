@@ -1,6 +1,7 @@
 
 import WhiteInput from '../../../../UI/inputs/WhiteInput/WhiteInput'
 import FullButton from '../../../../UI/buttons/FullButtons/FullButton'
+import SimpleAlert from '../../../../UI/alerts/SimpleAlert/SimpleAlert'
 import Fb from '../../../../../../public/img/login-group/fb.svg?inline'
 import BottomLine from '../BottomLine/BottomLine.vue'
 
@@ -15,12 +16,14 @@ export default {
     Fb,
     BottomLine,
     FullButton,
+    SimpleAlert,
   },
 
   data() {
     return {
       email: '',
       password: '',
+      openAlert: true,
 
       validation: {
         email: false,
@@ -29,7 +32,17 @@ export default {
     }
   },
 
+  mounted() {
+
+
+  },
+
   methods: {
+
+    closeAlert() {
+      this.openAlert = false;
+    },
+
     auth(e) {
       e.preventDefault();
       let validationItems = {

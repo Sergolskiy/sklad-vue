@@ -25,6 +25,15 @@ input{
   min-height: 1024px;
   background: #F8F4EE url("./assets/img/login-group/login-bg.svg") bottom right no-repeat;
   background-size: cover;
+  padding-bottom: 1px;
+
+  @include for-1600{
+    min-height: 768px;
+  }
+
+  @include for-992{
+    background: #F8F4EE;
+  }
 }
 
 .auth-body{
@@ -38,8 +47,26 @@ input{
   max-width: 590px;
   padding: 80px 95px 30px;
 
-  &__alert{
+  @include for-1600{
+    max-width: 515px;
+    min-height: 570px;
+    padding: 60px 60px 30px;
+    margin-bottom: 85px;
+  }
 
+  @include for-992{
+    padding: 80px 95px 30px;
+    max-width: 590px;
+  }
+
+  @include for-768{
+    padding: 35px 25px 30px;
+    max-width: 515px;
+    margin: 0 auto;
+  }
+
+  &__alert{
+    border-radius: 5px 5px 0px 0px;
   }
 
   &__form{
@@ -48,12 +75,24 @@ input{
 
   &__form-bottom{
     margin-top: auto;
+
+    @include for-1600 {
+      margin-top: 70px;
+    }
   }
 
   &__form-img{
     position: absolute;
     bottom: -45px;
     left: -70px;
+    width: 125px;
+    height: 315px;
+
+    @include for-1600{
+      width: 110px;
+      height: 274px;
+    }
+
   }
 }
 
@@ -61,6 +100,16 @@ input{
   padding-top:  50px;
   margin-left: 70px;
   margin-bottom: 60px;
+
+  @include for-1600{
+    padding-top: 20px;
+    margin-left: 35px;
+    margin-bottom: 60px;
+  }
+
+  @include for-768{
+    margin-bottom: 18px;
+  }
 }
 
 .auth-form{
@@ -71,6 +120,11 @@ input{
     line-height: 56px;
     color: $brown;
     margin-bottom: 16px;
+
+    @include for-768{
+      font-size: 35px;
+      line-height: 44px;
+    }
   }
 
   &__subtitle{
@@ -78,10 +132,21 @@ input{
     line-height: 24px;
     color: $black;
     margin-bottom: 32px;
+
+
+    @include for-768{
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
   }
 
   &__field{
     margin-bottom: 32px;
+
+    @include for-768{
+      margin-bottom: 20px;
+    }
 
     &:last-child{
       margin-bottom: 24px;
@@ -103,11 +168,24 @@ input{
   &__btn-fb{
     display: flex;
     min-width: 55px;
+    width: 55px;
+    height: 55px;
     margin-left: 24px;
     transition: 0.3s;
 
+    @include for-768{
+      width: 45px;
+      min-width: 45px;
+      height: 45px;
+    }
+
     &:hover{
       box-shadow: 0px 0 8px #00000052;
+    }
+
+    svg{
+      width: 100%;
+      height: 100%;
     }
   }
 

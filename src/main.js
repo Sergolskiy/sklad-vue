@@ -3,6 +3,9 @@ import App from './App.vue'
 import {store} from './store/store';
 import {i18n} from './language/language';
 import {router} from './router/router';
+// import axios from 'axios'
+
+// Vue.use(axios)
 
 Vue.config.productionTip = false
 

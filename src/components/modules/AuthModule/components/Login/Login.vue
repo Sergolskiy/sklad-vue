@@ -2,11 +2,13 @@
 
   <div class="auth-body">
 
-    <div class="auth-body__alert">
-      <div class="auth-alert">
-
-      </div>
-    </div>
+    <SimpleAlert
+            class="auth-body__alert"
+            @close="closeAlert"
+            :color="'green'"
+            :type="'success'"
+            v-if="openAlert"
+    />
 
     <div class="auth-body__form">
       <div class="auth-form">

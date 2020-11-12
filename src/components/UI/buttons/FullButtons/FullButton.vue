@@ -49,6 +49,11 @@
     outline: 0;
     transition: 0.3s;
 
+    @include for-768{
+      height: 45px;
+      font-size: 15px;
+    }
+
     &:hover{
       box-shadow: 0px 0 8px #00000052;
     }

@@ -20,8 +20,9 @@
 }
 
 @mixin for-768 {
-  @media (max-width: 800px) { @content; }
+  @media (max-width: 767px) { @content; }
 }
+
 @mixin from-768 {
   @media (min-width: 801px) { @content; }
 }

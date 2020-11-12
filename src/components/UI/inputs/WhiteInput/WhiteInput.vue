@@ -89,6 +89,10 @@
         line-height: 16px;
         color: #BBAD9C;
       }
+
+      @include for-768{
+        height: 40px;
+      }
     }
 
     &__label{
@@ -99,6 +103,11 @@
       line-height: 16px;
       color: #BBAD9C;
       transition: 0.3s;
+
+      @include for-768{
+        left: 17px;
+        top: 13px;
+      }
     }
 
 

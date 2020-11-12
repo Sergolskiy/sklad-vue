@@ -60,6 +60,12 @@
     margin-right: -30px;
     position: relative;
 
+    @include for-550{
+      padding-left: 0;
+      padding-top: 90px;
+      margin-right: 0;
+    }
+
     /*counter: counter;*/
 
     &:after{
@@ -71,6 +77,20 @@
       width: 100px;
       height: 100px;
       background: url("../../../../../../assets/img/login-group/forgot-check.svg") center center no-repeat;
+
+      @include for-768{
+        top: 0;
+        left: -6px;
+        width: 70px;
+        height: 70px;
+        background-size: contain;
+      }
+
+      @include for-550{
+        top: 0;
+        left: 0;
+        margin-left: 0;
+      }
     }
 
     &__question{

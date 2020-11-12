@@ -63,6 +63,14 @@ export const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+
+  if (to.name === 'login' && localStorage.getItem("accessToken")) {
+    // next(routerPaths.auth)
+    console.log(43534);
+
+  }
+
+
   if (window.localStorage.token === undefined && to.path.indexOf(routerPaths.auth) !== 0 ){
     next(routerPaths.auth)
   }
