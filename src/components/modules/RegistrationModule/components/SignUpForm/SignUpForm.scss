@@ -13,6 +13,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
   }
 
   &__head-title{
@@ -61,7 +62,7 @@
 
 
   &__section{
-
+    margin-bottom: 16px;
   }
 
   &__title{
@@ -70,6 +71,16 @@
     color: #232323;
     line-height: 21px;
     margin-bottom: 24px;
+    position: relative;
+  }
+
+  &__title-prompt{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 11px;
+    line-height: 13px;
+    color: #F99746;
   }
 
   &__row{
@@ -87,6 +98,44 @@
   &__input{
 
   }
+
+  &__inputs-row{
+    display: flex;
+    margin: 0 -5px;
+  }
+
+  &__inputs-col{
+    padding: 0 5px;
+    width: 100%;
+  }
+
+  &__section-bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 24px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  &__section-bottom-link{
+
+  }
+
+  &__section-bottom-link-i{
+    color: #CD9E64;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  &__section-bottom-btn{
+
+  }
+
+  &__section-bottom-btn-i{
+    max-width: 173px;
+  }
+
 
 
 }
