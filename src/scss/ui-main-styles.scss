@@ -8,3 +8,49 @@
   text-decoration: none;
 }
 
+/********** v-select ************/
+
+.v-select{
+
+  .vs__dropdown-toggle{
+    padding-left: 16px;
+    height: 42px;
+    background: #F8F4EE;
+    border: 1px solid #BBAD9C;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .vs--open .vs__dropdown-toggle{
+    border-color: #CD9E64;
+  }
+
+  .vs__search, .vs__search:focus{
+    padding: 0;
+  }
+
+  &__label{
+    position: absolute;
+    left: 16px;
+    top: 13px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BBAD9C;
+    transition: 0.15s all;
+  }
+
+  .vs--open &__label{
+    top: -7px;
+    background: white;
+    background: linear-gradient(0deg, #F8F4EE 0%, #FFFFFF 105.56%);
+    padding: 0 2px;
+  }
+
+  .vs__actions svg path{
+    fill: #8F7A61;
+  }
+}
+
+
+
+/********** end v-select ************/
