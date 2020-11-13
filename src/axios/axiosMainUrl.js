@@ -17,12 +17,15 @@ import axios from 'axios'
 //   });
 
 export const API = axios.create({
-  baseURL: 'https://api.coindesk.com/v1/bpi/'
+  baseURL: 'http://sklad-usa-back/rest/v1/'
 })
+
+API.defaults.withCredentials = true;
+API.defaults.headers.post['Content-Type'] ='application/json';
+API.defaults.headers.post['Access-Control-Allow-Origin'] ='http://localhost:8080/';
 
 API.interceptors.response.use(function (response) {
 
-  console.log(4354);
   return response;
 }, function (error) {
 

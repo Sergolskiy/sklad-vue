@@ -1,3 +1,6 @@
+
+import {API} from '../../axios/axiosMainUrl'
+
 export const auth = {
   state: {
     auth: false,
@@ -25,11 +28,26 @@ export const auth = {
   },
 
   actions: {
-    auth({commit}) {
-      commit('setAuthStart')
-      commit('setAuth',{auth: true, token: '123'})
-      localStorage.setItem('token', '123');
+    auth({commit}, data) {
+      // "Access-Control-Allow-Origin", "*"
+      API.post('oauth/login', data)
       commit('setAuthEnd')
+      // return async () => {
+      //
+      //   try {
+      //     // const response = await API.post('oauth/login', authData );
+      //     commit('setAuthStart')
+      //     await API.post('oauth/login', data)
+      //     // commit('setAuth',{auth: true, token: '123'})
+      //     // localStorage.setItem('token', '123');
+      //     commit('setAuthEnd')
+      //     // return response;
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      //
+      // }
+
     },
 
     checkAuth() {

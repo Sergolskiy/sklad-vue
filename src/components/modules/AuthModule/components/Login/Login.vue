@@ -57,6 +57,8 @@
             </div>
             <div class="auth-form__btn-fb btn-style">
               <Fb/>
+
+              <v-facebook-login v-model="model" @sdk-init="handleSdkInit" app-id="2611006809174289" />
             </div>
           </div>
 

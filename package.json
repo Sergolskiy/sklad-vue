@@ -18,6 +18,7 @@
     "svg-url-loader": "^6.0.0",
     "vue": "^2.6.12",
     "vue-api-query": "^1.7.1",
+    "vue-facebook-login-component": "^3.0.0",
     "vue-i18n": "^8.21.1",
     "vue-router": "^3.4.3",
     "vue-select": "^3.10.8",

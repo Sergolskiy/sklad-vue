@@ -5,8 +5,10 @@ import SimpleAlert from '../../../../UI/alerts/SimpleAlert/SimpleAlert'
 import Fb from '../../../../../../public/img/login-group/fb.svg?inline'
 import BottomLine from '../BottomLine/BottomLine.vue'
 
+import VFacebookLogin from 'vue-facebook-login-component'
 
 import {validation} from '../../../../../services/validation'
+
 
 export default {
   name: "Login",
@@ -17,6 +19,7 @@ export default {
     BottomLine,
     FullButton,
     SimpleAlert,
+    VFacebookLogin,
   },
 
   data() {
@@ -24,6 +27,10 @@ export default {
       email: '',
       password: '',
       openAlert: true,
+
+      FB: {},
+      model: {},
+      scope: {},
 
       validation: {
         email: false,
@@ -67,9 +74,9 @@ export default {
 
       let validate = validation(validationItems, validationOptions);
       this.validation = validate.validation;
-      console.log(validate);
+      console.log(this.$store);
       if(validate.isValidate){
-        alert(2342)
+        this.$store.dispatch('auth', validationItems);
       }
     },
 
@@ -121,6 +128,11 @@ export default {
       }
 
     },
+
+    handleSdkInit({ FB, scope }) {
+      this.FB = FB
+      this.scope = scope
+    }
   },
 
 
